@@ -1,4 +1,4 @@
-{
+np{
   "name": "note-taker",
   "version": "1.0.0",
   "description": "",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.16.4"
   }
 }
