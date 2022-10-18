@@ -6,6 +6,7 @@ VALUES ("Sales Person"),
        ("Accountant");
        ("Legal Team Leed");
        ("Lawyer");
+--don't think this was necessry--
 
 INSERT INTO manager_db (name, department)
 VALUES ("Intro to JavaScript", 1),

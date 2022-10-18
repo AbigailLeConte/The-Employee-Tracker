@@ -21,4 +21,3 @@ CREATE TABLE employee_db (
   department_id INT,
 )
 
---need to format code to project 12--

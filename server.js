@@ -1,5 +1,10 @@
+const inquirer = require('inquirer');
 const express = require('express');
 const mysql = require('mysql2');
+const node = require('node.js');
+// cont nodejs = require('node.js');
+//      ^^^^^ 
+// SyntaxError: Unexpected identifier
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -12,19 +17,21 @@ const db = mysql.createConnection(
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'books_db'
+    database: 'tracker_db'
   },
-  console.log(`Connected to the books_db database.`)
+  console.log(`Connected to the tracker_db database.`)
 );
 
 
-db.query('SELECT COUNT(id) AS total_count FROM favorite_books GROUP BY in_stock', function (err, results) {
+db.query('SELECT COUNT(id) AS total_count FROM tracker_books GROUP BY in_stock', function (err, results) {
   console.log(results);
 });
 
+//I don't think I need this 'SUM' function
 db.query('SELECT SUM(quantity) AS total_in_section, MAX(quantity) AS max_quantity, MIN(quantity) AS min_quantity, AVG(quantity) AS avg_quantity FROM favorite_books GROUP BY section', function (err, results) {
   console.log(results);
 });
+// end here
 
 app.use((req, res) => {
   res.status(404).end();
