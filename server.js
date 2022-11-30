@@ -22,14 +22,29 @@ const db = mysql.createConnection(
   console.log(`Connected to the tracker_db database.`)
 );
 
+const [rows, fields] = await connection.execute('SELECT * FROM tracker_db WHERE first_name = ? AND role > ?', ['', INT]);
 
-db.query('SELECT COUNT(id) AS total_count FROM tracker_books GROUP BY in_stock', function (err, results) {
+// simple query
+db.query('SELECT COUNT(id) AS tracker_db FROM department_db GROUP BY name', function (err, results) {
   console.log(results);
 });
 
-//I don't think I need this 'SUM' function
-db.query('SELECT SUM(quantity) AS total_in_section, MAX(quantity) AS max_quantity, MIN(quantity) AS min_quantity, AVG(quantity) AS avg_quantity FROM favorite_books GROUP BY section', function (err, results) {
+// simple query
+db.query('SELECT COUNT(id) AS tracker_db FROM role_db GROUP BY department_id', function (err, results) {
   console.log(results);
+  console.log(fields);
+});
+
+// simple query
+db.query('SELECT COUNT(id) AS tracker_db FROM employee_db GROUP BY role_id', function (err, results) {
+  console.log(results);
+  console.log(fields);
+});
+
+//totals salaries
+db.query('SELECT SUM(quantity) AS total_in_section, MAX(quantity) AS max_quantity, MIN(quantity) AS min_quantity, AVG(quantity) AS avg_quantity FROM salary GROUP BY section', function (err, results) {
+  console.log(results);
+  console.log(fields);
 });
 // end here
 

@@ -1,22 +1,26 @@
-INSERT INTO employee_db (name)
-VALUES ("Sales Person"),
-       ("Lead Engineer"),
-       ("Software Engineer"),
-       ("Account Manager");
-       ("Accountant");
-       ("Legal Team Leed");
-       ("Lawyer");
---don't think this was necessry--
+INSERT INTO department_db (name, id)
+VALUES ("Sales", 3),
+       ("Engineer", 5),
+       ("Software Engineer", 5),
+       ("Accounts", 2);
+       ("Accountant", 2);
+       ("Legal Team Leed", 1);
+       ("Lawyer", 1);
 
-INSERT INTO manager_db (name, department)
-VALUES ("Intro to JavaScript", 1),
-       ("Data Science", 2),
-       ("Linear Algebra", 3),
-       ("History of the Internet", 4),
-       ("Machine Learning", 4),
-       ("Game Design", 1 ),
-       ("Cloud Development", 1);
-       
+INSERT INTO role_db (title, salary, department)
+VALUES ("Sales Person", 60,000, 3),
+       ("Lead Engineer", 120000, 5),
+       ("Software Engineer", 80,000, 5),
+       ("Account Manager", 75,000, 2);
+       ("Accountant", 55,000, 2);
+       ("Legal Team Leed", 89,000, 1);
+       ("Lawyer", 190,000, 1);
 
-
--- need to write out code for project requirments --
+INSERT INTO employee_db (name, salary)
+VALUES ("Sales Person", 60,000),
+       ("Lead Engineer", 120000),
+       ("Software Engineer", 80,000),
+       ("Account Manager", 75,000);
+       ("Accountant", 55,000);
+       ("Legal Team Leed", 89,000);
+       ("Lawyer", 190,000);
